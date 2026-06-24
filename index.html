@@ -4,10 +4,193 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>مكتب هدي الصالحين للخدمات العامة</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;direction:rtl;background:#f9f9f9}
+.header{background:#04342C;padding:0 2rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:10px}
+.header-logo{display:flex;align-items:center;gap:14px}
+.logo-name span:first-child{font-size:15px;font-weight:bold;color:#E1F5EE;line-height:1.3;display:block}
+.logo-name span:last-child{font-size:11px;color:#5DCAA5;display:block;margin-top:1px}
+.header-contact{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 12px}
+.header-contact i{font-size:16px;color:#5DCAA5}
+.header-contact span{font-size:13px;color:#9FE1CB;direction:ltr}
+.nav{background:#085041;display:flex;justify-content:center;flex-wrap:wrap}
+.nav a{font-size:13px;color:rgba(255,255,255,0.75);text-decoration:none;padding:0.65rem 1.5rem;border-left:1px solid rgba(255,255,255,0.08)}
+.nav a:last-child{border-left:none}
+.nav a:hover{background:rgba(255,255,255,0.08);color:white}
+.hero-band{background:#063C2E;padding:2.5rem 2rem;text-align:center}
+.hero-ring{width:120px;height:120px;border-radius:50%;border:2px solid rgba(93,202,165,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+.hero-ring-inner{width:96px;height:96px;border-radius:50%;background:#085041;border:2px solid rgba(93,202,165,0.5);display:flex;align-items:center;justify-content:center}
+.hero-band h1{font-size:22px;font-weight:bold;color:#E1F5EE;margin-bottom:0.5rem;line-height:1.4}
+.hero-band p{font-size:13px;color:#5DCAA5}
+.hero-pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:1.25rem}
+.pill{background:rgba(255,255,255,0.07);border:1px solid rgba(93,202,165,0.25);border-radius:20px;padding:4px 14px;font-size:12px;color:#9FE1CB}
+.section{padding:2rem}
+.sec-label{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem}
+.sec-label-bar{width:3px;height:20px;background:#1D9E75;flex-shrink:0}
+.sec-label h2{font-size:16px;font-weight:bold;color:#222}
+.sec-label-line{flex:1;height:1px;background:#e0e0e0}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden}
+.svc{background:#fff;padding:1.1rem;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.svc:hover{background:#E1F5EE}
+.svc-icon{width:38px;height:38px;border-radius:8px;background:#E1F5EE;display:flex;align-items:center;justify-content:center}
+.svc-icon i{font-size:18px;color:#085041}
+.svc h3{font-size:13px;font-weight:bold;color:#222}
+.svc p{font-size:11px;color:#666;line-height:1.5}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#085041;padding:1.5rem 2rem}
+.stat-item{text-align:center;padding:0.5rem}
+.stat-n{font-size:24px;font-weight:bold;color:#9FE1CB}
+.stat-l{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px}
+.about{padding:2rem;background:#f5f5f5}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.about-text p{font-size:13px;color:#555;line-height:1.8}
+.trust-list{display:flex;flex-direction:column;gap:10px}
+.trust-item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:0.7rem 1rem}
+.trust-item i{font-size:18px;color:#0F6E56}
+.trust-item span{font-size:12px;color:#555}
+.contact{padding:2rem;background:#fff}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.75rem;margin-top:1.25rem}
+.ccard{background:#f5f5f5;border:1px solid #e0e0e0;border-radius:10px;padding:1rem;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.ccard-icon{width:40px;height:40px;border-radius:50%;background:#E1F5EE;display:flex;align-items:center;justify-content:center}
+.ccard-icon i{font-size:18px;color:#085041}
+.ccard .cl{font-size:11px;color:#888}
+.ccard .cv{font-size:13px;font-weight:bold;color:#222}
+.footer{background:#04342C;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-left{font-size:12px;color:rgba(255,255,255,0.4)}
+.footer-left strong{color:#5DCAA5}
+.footer-right{font-size:11px;color:rgba(255,255,255,0.3)}
+@media(max-width:600px){.about-inner{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.header-inner{flex-direction:column;align-items:flex-start}}
+</style>
 </head>
 <body>
-<h1>مكتب هدي الصالحين للخدمات العامة</h1>
-<p>Huda Al-Saleheen Office for General Services</p>
-<p>المملكة العربية السعودية - Kingdom of Saudi Arabia</p>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+        <circle cx="26" cy="26" r="25" fill="#085041" stroke="#1D9E75" stroke-width="1"/>
+        <rect x="12" y="32" width="28" height="12" rx="1" fill="#5DCAA5"/>
+        <rect x="16" y="35.5" width="4" height="6" rx="1" fill="#04342C"/>
+        <rect x="24" y="35.5" width="4" height="6" rx="1" fill="#04342C"/>
+        <rect x="32" y="35.5" width="4" height="6" rx="1" fill="#04342C"/>
+        <path d="M9 33L26 20L43 33" fill="#1D9E75" stroke="#5DCAA5" stroke-width="0.5"/>
+        <rect x="21" y="27" width="10" height="7" rx="1.5" fill="white" opacity="0.95"/>
+        <line x1="23" y1="29.5" x2="29" y2="29.5" stroke="#085041" stroke-width="1" stroke-linecap="round"/>
+        <line x1="23" y1="31.5" x2="27" y2="31.5" stroke="#085041" stroke-width="1" stroke-linecap="round"/>
+        <line x1="26" y1="12" x2="26" y2="20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M26 13L34 16L26 19Z" fill="white" opacity="0.8"/>
+      </svg>
+      <div class="logo-name">
+        <span>مكتب هدي الصالحين للخدمات العامة</span>
+        <span>عيون الجواء — القصيم</span>
+      </div>
+    </div>
+    <div class="header-contact">
+      <i class="ti ti-phone"></i>
+      <span>0545649166</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <a href="#">الرئيسية</a>
+  <a href="#">خدماتنا</a>
+  <a href="#">من نحن</a>
+  <a href="#">تواصل معنا</a>
+</nav>
+
+<div class="hero-band">
+  <div class="hero-ring">
+    <div class="hero-ring-inner">
+      <svg viewBox="0 0 60 60" fill="none" width="60" height="60">
+        <rect x="10" y="36" width="40" height="16" rx="1.5" fill="#5DCAA5"/>
+        <rect x="15" y="39.5" width="5" height="8" rx="1" fill="#04342C"/>
+        <rect x="27.5" y="39.5" width="5" height="8" rx="1" fill="#04342C"/>
+        <rect x="40" y="39.5" width="5" height="8" rx="1" fill="#04342C"/>
+        <path d="M7 37L30 22L53 37" fill="#1D9E75" stroke="#9FE1CB" stroke-width="0.75"/>
+        <rect x="23" y="28" width="14" height="10" rx="1.5" fill="white" opacity="0.95"/>
+        <line x1="26" y1="31" x2="34" y2="31" stroke="#085041" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="26" y1="33.5" x2="34" y2="33.5" stroke="#085041" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="30" y1="12" x2="30" y2="22" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M30 13L40 16.5L30 20Z" fill="white" opacity="0.85"/>
+      </svg>
+    </div>
+  </div>
+  <h1>مكتب هدي الصالحين<br>للخدمات العامة</h1>
+  <p>عيون الجواء — القصيم — المملكة العربية السعودية</p>
+  <div class="hero-pills">
+    <span class="pill">موثوق</span>
+    <span class="pill">احترافي</span>
+    <span class="pill">سريع</span>
+    <span class="pill">متخصص</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">
+    <div class="sec-label-bar"></div>
+    <h2>خدماتنا</h2>
+    <div class="sec-label-line"></div>
+  </div>
+  <div class="services-grid">
+    <div class="svc"><div class="svc-icon"><i class="ti ti-device-mobile"></i></div><h3>أبشر</h3><p>جميع خدمات منصة أبشر الحكومية</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-shield-check"></i></div><h3>التأمينات الاجتماعية</h3><p>معاملات التأمينات والتقاعد</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-file-certificate"></i></div><h3>التوثيق والتصديق</h3><p>توثيق الوثائق الرسمية</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-building-bank"></i></div><h3>الخدمات الحكومية</h3><p>إنهاء المعاملات بسرعة</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-id-badge"></i></div><h3>الإقامات والتأشيرات</h3><p>متابعة طلبات الإقامة</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-users"></i></div><h3>شؤون العمالة</h3><p>استقدام ونقل الكفالة</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-language"></i></div><h3>الترجمة المعتمدة</h3><p>ترجمة لجميع اللغات</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-briefcase"></i></div><h3>تأسيس الشركات</h3><p>تسجيل وتأسيس المنشآت</p></div>
+    <div class="svc"><div class="svc-icon"><i class="ti ti-headset"></i></div><h3>الاستشارات</h3><p>استشارات إدارية وقانونية</p></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat-item"><div class="stat-n">+500</div><div class="stat-l">عميل راضٍ</div></div>
+  <div class="stat-item"><div class="stat-n">+10</div><div class="stat-l">سنوات خبرة</div></div>
+  <div class="stat-item"><div class="stat-n">+50</div><div class="stat-l">خدمة متاحة</div></div>
+  <div class="stat-item"><div class="stat-n">24/7</div><div class="stat-l">دعم مستمر</div></div>
+</div>
+
+<div class="about">
+  <div class="sec-label">
+    <div class="sec-label-bar"></div>
+    <h2>من نحن</h2>
+    <div class="sec-label-line"></div>
+  </div>
+  <div class="about-inner">
+    <div class="about-text">
+      <p>مكتب هدي الصالحين للخدمات العامة مكتب متخصص في تقديم الخدمات الإدارية والحكومية بعيون الجواء بمنطقة القصيم، يعمل على تيسير إنجاز معاملات المواطنين والمقيمين بكل أمانة واحترافية عالية.</p>
+    </div>
+    <div class="trust-list">
+      <div class="trust-item"><i class="ti ti-circle-check"></i><span>خبرة تزيد عن 10 سنوات في المجال</span></div>
+      <div class="trust-item"><i class="ti ti-clock"></i><span>إنجاز سريع وفي أقل وقت ممكن</span></div>
+      <div class="trust-item"><i class="ti ti-lock"></i><span>سرية تامة وأمانة عالية</span></div>
+      <div class="trust-item"><i class="ti ti-star"></i><span>خدمة عملاء على مدار الساعة</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="contact">
+  <div class="sec-label">
+    <div class="sec-label-bar"></div>
+    <h2>تواصل معنا</h2>
+    <div class="sec-label-line"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="ccard"><div class="ccard-icon"><i class="ti ti-phone"></i></div><span class="cl">الهاتف</span><span class="cv" style="direction:ltr">0545649166</span></div>
+    <div class="ccard"><div class="ccard-icon"><i class="ti ti-brand-whatsapp"></i></div><span class="cl">واتساب</span><span class="cv" style="direction:ltr">0545649166</span></div>
+    <div class="ccard"><div class="ccard-icon"><i class="ti ti-map-pin"></i></div><span class="cl">الموقع</span><span class="cv">عيون الجواء، القصيم</span></div>
+    <div class="ccard"><div class="ccard-icon"><i class="ti ti-world"></i></div><span class="cl">الموقع الإلكتروني</span><span class="cv" style="font-size:11px">alsaleheen-services.forsale</span></div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="footer-left">© 2026 <strong>مكتب هدي الصالحين للخدمات العامة</strong> — جميع الحقوق محفوظة</span>
+  <span class="footer-right">عيون الجواء، القصيم، المملكة العربية السعودية</span>
+</div>
+
 </body>
 </html>
